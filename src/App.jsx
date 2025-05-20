@@ -34,7 +34,7 @@ export default function App() {
         element: <Layout/>,
         children: [
           {
-            path: "/:category_slug?",
+            path: "/product/:category_slug?",
             element: <List />,
 
           }, {
@@ -53,7 +53,7 @@ export default function App() {
             path:"/contect",
             element:<Contact/>
           },{
-            path:"/home",
+            path:"/",
             element:<Home/>
           }
         ]

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           {/* Logo or Brand */}
           <div className="mb-6 md:mb-0">
-            <h2 className="text-3xl font-bold text-white">Apex Product Seller Group.</h2>
+            <h2 className="text-3xl font-bold text-white">Apex </h2>
             <p className="text-gray-400 mt-2"></p>
           </div>
 
@@ -53,7 +53,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="mt-8 border-t border-gray-700 pt-6 text-center">
-          <p className="text-sm text-gray-400">&copy; 2025 Apex Product Seller Group.. All rights reserved.</p>
+          <p className="text-sm text-gray-400">&copy; 2025 Apex  All rights reserved.</p>
         </div>
       </div>
     </footer>

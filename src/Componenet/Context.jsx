@@ -163,18 +163,6 @@ export default function Context(props) {
     localStorage.removeItem("user");
   }
 
-  
-  useEffect(() => {
-    axios
-      .get("https://dummyjson.com/products")
-      .then((res) => {
-        Setproduct(res.data.products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   function addtocart(id) {
     const exitproduct = product.find((item) => item.id == id);
 
@@ -208,7 +196,8 @@ export default function Context(props) {
 
     if (flag === 0) {
       if (exitproduct) {
-        updatedCart = cart.map((prod) =>
+        updatedCart = cart
+          .map((prod) =>
             prod.id == id && prod.qty > 1
               ? { ...prod, qty: prod.qty - 1 }
               : prod
@@ -233,7 +222,15 @@ export default function Context(props) {
 
   return (
     <Maincontext.Provider
-      value={{ user, userhandler, logoout, addtocart, cart, qtyHandler,removeFromCart }}
+      value={{
+        user,
+        userhandler,
+        logoout,
+        addtocart,
+        cart,
+        qtyHandler,
+        removeFromCart,
+      }}
     >
       {props.children}
     </Maincontext.Provider>

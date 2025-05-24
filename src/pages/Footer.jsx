@@ -20,8 +20,8 @@ const Footer = () => {
               <ul className="mt-2 text-gray-400">
                 <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
                 <li><Link to="/about" className="hover:text-gray-300">About</Link></li>
-                <li><Link to="/services" className="hover:text-gray-300">Services</Link></li>
-                <li><Link to="/contact" className="hover:text-gray-300">Contact</Link></li>
+
+                <li><Link to={"/contect"} className="hover:text-gray-300">Contact</Link></li>
               </ul>
             </div>
 

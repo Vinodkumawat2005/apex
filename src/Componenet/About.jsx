@@ -1,5 +1,6 @@
 // About.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -36,8 +37,8 @@ const About = () => {
         <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
         <p className="text-gray-700 leading-relaxed">
           Have questions? We’d love to hear from you!  
-          Reach out via our <a href="/contact" className="text-blue-600 hover:underline">Contact Page </a>  
-          or email us at <a href="mailto:support@yourstorename.com" className="text-blue-600 hover:underline">support@yourstorename.com</a>.
+          Reach out via our <Link to={"/contect"} className="text-blue-600 hover:underline">Contact Page </Link>  
+          
         </p>
       </section>
     </div>

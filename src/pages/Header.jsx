@@ -27,7 +27,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search product..."
-            className="w-[100%] md:w-[150px] h-[40px] p-2 border border-gray-300 rounded"
+            className="w-[50%]  md:w-[150px] h-[40px] p-2 border border-gray-300 rounded"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

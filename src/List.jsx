@@ -110,22 +110,6 @@ export default function List() {
             Category
           </h2>
 
-          <div className="mt-4 ms-[15px] me-[15px]">
-            <input
-              type="text"
-              placeholder="Search category..."
-              className="w-[100%] md:w-[150px] h-[40px] p-2 border border-gray-300 rounded"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-
-            <button
-              onClick={handleSearch}
-              className=" bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
-            >
-              Search
-            </button>
-          </div>
 
           <Link to={"/product"}>
             <button className="mt-3.5 m-1.5 bg-gray-300 border-b-black w-[90%] md:w-[150px] h-[40px] cursor-pointer">
@@ -138,7 +122,7 @@ export default function List() {
               <button
                 className={`${
                   category_slug === cate.slug ? "bg-amber-800" : "bg-gray-300"
-                } mt-3.5 m-1.5 w-[90%] md:w-[150px] h-[40px] cursor-pointer items-center`}
+                } mt-3.5 m-1.5 w-[90%] md:w-[160px]  h-[45px] cursor-pointer items-center`}
               >
                 {cate.name}
               </button>
@@ -157,14 +141,14 @@ export default function List() {
             : product.map((item, index) => (
                 <div
                   key={index}
-                  className="group  md:ms-[50px] ms-[10px] cursor-pointer w-[230px]  relative col-span-3 mt-[26px]"
+                  className="group   md:ms-[50px]  cursor-pointer w-[230px]  relative col-span-2 mt-[26px]"
                 >
                   <img
-                    className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                    className="aspect-square w-full h-[200px] rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
                     src={item.thumbnail}
                     alt={item.title}
                   />
-                  <div className="mt-4 flex justify-between">
+                  <div className="mt-4  flex justify-between">
                     <div className="ms-1">
                       <h3 className="text-sm text-gray-700">{item.title}</h3>
                       <p className="mt-1 text-sm text-gray-800">

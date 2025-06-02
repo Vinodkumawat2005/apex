@@ -56,7 +56,7 @@ export default function Home() {
       ) : (
         <>
           <div className="flex justify-center items-center w-full max-w-5xl mx-auto">
-            <Link to={"/"}>
+            <Link to={"/product"}>
               <button className="border rounded-xl w-[200px] p-5 hover:shadow-lg hover:bg-gray-50 text-center text-gray-700 capitalize cursor-pointer transition-all">
                 Shop Now
               </button>

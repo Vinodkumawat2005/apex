@@ -5,7 +5,7 @@ import { Maincontext } from "../Componenet/Context";
 import { FaBars } from "react-icons/fa6";
 import { MdOutlineClose } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
-
+import { IoIosSearch } from "react-icons/io";
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -22,21 +22,27 @@ const Header = () => {
   return (
     <header className="bg-[#3674B5] text-white p-4 fixed w-full z-1">
       <nav className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Apex</h1>
-        <div className="mt-4 ms-[15px] me-[15px]">
-          <input
+        <h1 className="text-2xl font-bold ">Apex</h1>
+        <div className="mt-4  relative border border-gray-300 rounded ms-[20px] me-[20px]">
+      
+             <input
             type="text"
             placeholder="Search product..."
-            className="w-[50%]  md:w-[150px] h-[40px] p-2 border border-gray-300 rounded"
+            className="w-[50%]   md:w-[150px] h-[40px] p-2 "
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+           
+
           />
-          <button
+  <IoIosSearch  className="absolute bottom-2.5 right-1 cursor-pointer  " onClick={handleSearch}/>
+         
+      
+          {/* <button
             onClick={handleSearch}
             className=" bg-blue-500 text-white px-4 py-2 ms-[10px] rounded cursor-pointer"
           >
             Search
-          </button>
+          </button> */}
         </div>
         <ul className="  hidden md:flex space-x-6">
           <>
@@ -91,6 +97,7 @@ const Header = () => {
               <li className="hover:text-gray-300 text-2xl">
                 <Link to="/cart">
                   <FaCartPlus />
+            
                 </Link>
               </li>
             </>

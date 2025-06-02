@@ -52,12 +52,25 @@ export default function Details() {
                   345 Reviews
                 </a>
               </div>
+              <p>Discount % {detail.discountPercentage}</p>
+              
             </div>
            
             <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
             <p className="mb-6 text-gray-500 dark:text-gray-400">
               {detail.description}
             </p>
+            <div className="flex">
+<div><p style={{ color: detail.stock > 5 ? 'green' : 'red' }}>Available Stock - {detail.stock}</p>
+            <p>Weight - {detail.weight}</p>
+            <p style={{color: detail.returnPolicy > 1 ? 'green' : 'red'}}>Return : {detail.returnPolicy}</p>
+            </div>
+<div className="ms-[30px]"><p>Warrenty : {detail.warrantyInformation}</p>
+<p>Shipping : {detail.shippingInformation}</p>
+</div>
+
+            </div>
+            
           </div>
         </div>
       </div>

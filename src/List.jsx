@@ -4,6 +4,7 @@ import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { Maincontext } from "./Componenet/Context";
 import { ToastContainer, toast } from "react-toastify";
 
+
 export default function List() {
   const [product, Setproduct] = useState([]);
   const [categories, Setcategories] = useState([]);
@@ -48,7 +49,7 @@ export default function List() {
   };
 
   const handle = () => {
-    toast("Product Add Successfully !");
+  
   };
 
   useEffect(() => {
@@ -106,7 +107,7 @@ export default function List() {
     <>
       <div className="grid grid-cols-6 bg-[white] md:grid-cols-5">
         <div className="mt-[78px] md:col-span-1 ms-[30px] col-span-2 xl:col-span-1">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-3.5 ms-[15px]">
+          <h2 className=" text-2xl font-bold tracking-tight text-gray-900 mt-3.5 ms-[15px]">
             Category
           </h2>
 
@@ -120,9 +121,12 @@ export default function List() {
           {categories.map((cate, index) => (
             <Link key={index} to={`/product?search=${cate.slug}&type=category`}>
               <button
-                className={`${
-                  category_slug === cate.slug ? "bg-amber-800" : "bg-gray-300"
-                } mt-3.5 m-1.5 w-[90%] md:w-[160px]  h-[45px] cursor-pointer items-center`}
+                     className={`${
+        search === cate.slug && searchType === "category"
+          ? "bg-amber-800 text-white"
+          : "bg-gray-300"
+      } mt-3.5 m-1.5 w-[90%] md:w-[160px] h-[45px] cursor-pointer items-center`}
+
               >
                 {cate.name}
               </button>
@@ -130,7 +134,7 @@ export default function List() {
           ))}
         </div>
 
-        <div className="col-span-4 flex flex-wrap ms-[30px] me-[15px] mt-[116px] gap-3 md:col-span-4 md:ms-3.5 ">
+        <div className="col-span-4 flex flex-wrap ms-[30px] me-[15px] md:h-[auto] mt-[116px] gap-3 md:col-span-4 md:ms-3.5 ">
           {loading
             ? [1, 2, 3, 4, 5, 6].map((d, i) => (
                 <div
@@ -141,15 +145,19 @@ export default function List() {
             : product.map((item, index) => (
                 <div
                   key={index}
-                  className="group   md:ms-[50px]  cursor-pointer w-[230px]  relative col-span-2 mt-[26px]"
+                  className="group   md:mt-[20px]   md:ms-[50px]  cursor-pointer w-[230px]  relative col-span-2 mt-[16px]  "
                 >
+                    <Link to={`/details/${item.id}`}>
                   <img
                     className="aspect-square w-full h-[200px] rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
                     src={item.thumbnail}
                     alt={item.title}
                   />
-                  <div className="mt-4  flex justify-between">
+                  </Link>
+                  <div className="mt-4  flex justify-between ">
+                    
                     <div className="ms-1">
+
                       <h3 className="text-sm text-gray-700">{item.title}</h3>
                       <p className="mt-1 text-sm text-gray-800">
                         {item.category}
@@ -161,7 +169,9 @@ export default function List() {
                     >
                       ${item.price}
                     </p>
+                  
                   </div>
+                   
                   <div className="mt-4 flex space-x-2 justify-center">
                     <Link
                       to={`/details/${item.id}`}
@@ -178,7 +188,7 @@ export default function List() {
                     >
                       Add To Cart
                     </button>
-                    <ToastContainer />
+                    
                   </div>
                 </div>
               ))}
@@ -186,7 +196,7 @@ export default function List() {
       </div>
 
       {/* Pagination */}
-      <div className="h-[50px] pt-[40px] pb-[50px] bg-[white] flex justify-center items-center">
+      <div className="h-[50px] pt-[40px]  bg-[white] flex justify-center items-center">
         <nav aria-label="Page navigation" className="block">
           <ul className="inline-flex -space-x-px text-sm cursor-pointer">
             {paginaction}

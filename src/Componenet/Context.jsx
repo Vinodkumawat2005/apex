@@ -153,6 +153,8 @@ export default function Context(props) {
     }
   }, []);
 
+
+  
   function userhandler(data) {
     Setuser(data);
     localStorage.setItem("user", JSON.stringify(data));
@@ -168,12 +170,14 @@ export default function Context(props) {
 
     if (exitproduct) {
       const cartproduct = cart.find((cd) => cd.id == id);
+      
 
       if (cartproduct) {
         const updateproduct = cart.map((prod) =>
           prod.id == id ? { ...prod, qty: prod.qty + 1 } : prod
         );
         Setcart(updateproduct);
+        
         localStorage.setItem("cart", JSON.stringify(updateproduct));
       } else {
         const newCart = [...cart, { ...exitproduct, qty: 1 }];
@@ -190,6 +194,23 @@ export default function Context(props) {
     }
   }, []);
 
+
+   useEffect(
+     () => {
+       axios.get("https://dummyjson.com/products").then(
+         (res) => {
+           Setproduct(res.data.products)
+
+
+        }
+       ).catch(
+         (error) => {
+           console.log(error)
+       }
+     )
+
+    }, []
+   )
   function qtyHandler(id, flag) {
     let updatedCart;
     const exitproduct = product.find((item) => item.id == id);

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function Details() {
   const { product_id } = useParams();
   const [detail, Setdetail] = useState({});
-
+ const [disabled, setDisabled] = useState(false);
   const getdetails = () => {
     axios
       .get(`https://dummyjson.com/products/${product_id}`)
@@ -67,10 +67,33 @@ export default function Details() {
             </div>
 <div className="ms-[30px]"><p>Warrenty : {detail.warrantyInformation}</p>
 <p>Shipping : {detail.shippingInformation}</p>
+
 </div>
 
             </div>
-            
+    <div  style={{ display: disabled ? 'none' : 'block'}} className="relative w-[200px] h-[150px] ">
+      {!disabled && (
+        <iframe
+          width="200"
+          height="150"
+          src="https://www.youtube.com/embed/CBxgZxjdJyk"
+         
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      )}
+
+   
+      <button style={{ display: disabled ? 'none' : 'block'}}
+        onClick={() => setDisabled(true)}
+        className="absolute top-1 right-1 bg-white text-black rounded-full w-6 h-6 text-center font-bold shadow cursor-pointer"
+        title="Disable video"
+      >
+        ✕
+      </button>
+   
+    </div>
+       
           </div>
         </div>
       </div>

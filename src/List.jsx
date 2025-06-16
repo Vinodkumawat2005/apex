@@ -196,7 +196,7 @@ export default function List() {
       </div>
 
       {/* Pagination */}
-      <div className="h-[50px] pt-[40px]  bg-[white] flex justify-center items-center">
+      <div className="h-[50px] pt-[40px]  bg-[white] flex   justify-center items-center ">
         <nav aria-label="Page navigation" className="block">
           <ul className="inline-flex -space-x-px text-sm cursor-pointer">
             {paginaction}

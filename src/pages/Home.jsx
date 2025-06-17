@@ -4,13 +4,13 @@ import axios from "axios";
 import { ReactTyped } from "react-typed";
 
 const images = [
-  "public/product4.jpg",
-  "public/product1.jpg",
-  "public/product2.jpg",
-  "public/product3.jpg",
-  "public/product5.jpg",
-  "public/beauty.jpg",
-  "public/download.jpg",
+  "/product4.jpg",
+  "/product1.jpg",
+  "/product2.jpg",
+  "/product3.jpg",
+  "/product5.jpg",
+  "/beauty.jpg",
+  "/download.jpg",
 ];
 
 export default function Home() {

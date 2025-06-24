@@ -57,13 +57,13 @@ export default function Home() {
         <>
           <div className="flex justify-center items-center w-full max-w-5xl mx-auto">
             <Link to={"/product"}>
-              <button className="border rounded-xl w-[200px] p-5 hover:shadow-lg hover:bg-gray-50 text-center text-gray-700 capitalize cursor-pointer transition-all">
+              <button className="border rounded-xl w-[200px]  p-5 hover:shadow-lg hover:bg-gray-50 text-center text-gray-700 capitalize cursor-pointer transition-all">
                 Shop Now
               </button>
             </Link>
           </div>
 
-          <div className="relative w-[400px] mt-8 h-[300px] max-w-xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative w-[300px] sm:bg-green  mt-8 h-[200px] max-w-xl mx-auto overflow-hidden rounded-2xl shadow-lg">
             <img
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}

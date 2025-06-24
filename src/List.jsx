@@ -140,14 +140,14 @@ export default function List() {
             ? [1, 2, 3, 4, 5, 6].map((d, i) => (
                 <div
                   key={i}
-                  className="w-[300px] h-[400px] bg-gray-200 animate-pulse md:bg-[blue]"
+                  className="w-[300px] h-[400px] bg-gray-200 animate-pulse "
                 ></div>
               ))
             : product.map((item, index) => (
                 <div
                   key={index}
                   className="
-                    group   md:mt-[20px]   md:ms-[50px]  cursor-pointer w-[230px] h-[430px]  relative col-span-2  mt-2"
+                    group   md:mt-[20px]   md:ms-[50px]   cursor-pointer w-[230px] h-[430px]  relative col-span-2  mt-2"
                 >
                   <Link to={`/details/${item.id}`}>
                     <img
@@ -192,13 +192,14 @@ export default function List() {
       </div>
 
       {/* Pagination */}
-      <div className="h-[50px] pt-[40px]  bg-[white] flex   justify-center items-center ">
+      <div className="h-[50px] pt-34  bg-[white] flex   justify-center items-center ">
         <nav aria-label="Page navigation" className="block">
           <ul className="inline-flex -space-x-px text-sm cursor-pointer">
             {paginaction}
           </ul>
         </nav>
       </div>
+      <div className="w-[100%] h-[70px] bg-white"></div>
     </>
   );
 }

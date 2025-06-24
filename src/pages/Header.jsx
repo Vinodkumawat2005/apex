@@ -133,7 +133,7 @@ const Header = () => {
               <li onClick={() => Settoggle(!toggle)}>
                 <Link
                   to="/register"
-                  className="hover:text-gray-300   ms-[70px]"
+                  className="hover:text-gray-300   ms-[40px]"
                 >
                   Register
                 </Link>
